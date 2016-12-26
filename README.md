@@ -1,3 +1,18 @@
+5. Execute minikube ip – to discover address of kubernetes machine (or you could login to virtual machine and execute: ifconfig)
+
+ 
+
+
+
+6. Kubernetes + docker machine has been just created.
+
+ 
+
+7. Some local hacks to be performed:
+
+ 
+
+      Take config file from
 
 
 Lets 
@@ -46,5 +61,24 @@ Prerequisite:
  ![](docs/img/minikube.png?raw=true "minikube")
 
 
+6. Execute minikube ip – to discover address of kubernetes machine (or you could login to virtual machine and execute: ifconfig)
+
+ 
+ ![](docs/img/ip.png?raw=true "minikube ip")
+
+
+7. Kubernetes + docker machine has been just created.
+
+ 
+
+8. Some local settings to be applied:
+Take config file from
+
+ ![](docs/img/settings.png?raw=true "settings")
+ 
+ And place it somewhere you feel it is convenient. (e.g. I placed it under root of D:/). We should use this file to execute kubectl commands.  
+9.  E.g. refer to classical Spring boot example:   https://github.com/dsyer/gs-spring-boot-docker 
+
+     
 
 
