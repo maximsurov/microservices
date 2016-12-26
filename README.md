@@ -52,6 +52,7 @@ Prerequisite:
 
   ![](docs/img/ip.png?raw=true "minikube ip")
 
+
 7. Kubernetes + docker machine has been just created.
 
  
@@ -86,8 +87,11 @@ If we execute: <<docker images>> on kubernetes + docker host we should see that 
 11. Now it is time to deploy image into kubernetes. From windows host execute consequently 
 
  kubectl run spring-boot-microservice --image=surov/spring-boot-microservice --port=8080 --replicas=3 --kubeconfig="d:/config"
- kubectl expose replicationController gs-spring-boot-docker --type=NodePort --external-ip=192.168.99.110 --kubeconfig="d:/config"
- kubectl describe services gs-spring-boot-docker --kubeconfig="d:/config"
+ 
+ kubectl expose replicationController spring-boot-microservice --type=NodePort --external-ip={ip of your minikube} --kubeconfig="d:/config"
+ 
+ kubectl describe services spring-boot-microservice --kubeconfig="d:/config"
+ 
  kubectl get pods --kubeconfig="d:/config"
 
  alternative approach is just to use fabric8 maven plugin commands to accomplish it, e.g.:
