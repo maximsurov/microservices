@@ -78,7 +78,7 @@ Take config file from
 It should create executable Spring boot jar + create docker image on remote host.
 If we execute: <<docker images>> on kubernetes + docker host we should see that surov/spring-boot-microservice image has been created.
 
-11. Now it is time to deploy image into kubernetes. From windows host execute consequently 
+Now it is time to deploy image into kubernetes. From windows host execute consequently 
 
  kubectl run spring-boot-microservice --image=surov/spring-boot-microservice --port=8080 --replicas=3 --kubeconfig="d:/config"
  
