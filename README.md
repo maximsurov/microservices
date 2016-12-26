@@ -104,7 +104,13 @@ If we execute: <<docker images>> on kubernetes + docker host we should see that 
  By default service that has one pod is created
  ![](docs/img/single.png?raw=true "single")
  if e.g. service has been scaled to 3 replicas the output is:
- ![](docs/img/scaled.png?raw=true "scaled")
+ ![](docs/img/whole.png?raw=true "scaled")
+ 
+ We have just set up single node 3 replicas (SLA) kubernetes cluster. You can see that all replicas are run.
+
+ To execute it externally we should use: http://192.168.99.110:31110/
+ Or it could have been configured to use also 8080 port.
+
  
 
  
