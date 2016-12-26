@@ -10,7 +10,7 @@ Microservices. How could we concisely illustrate architecture of microservices? 
 ![](docs/img/BannerOfPeace.png?raw=true "Roerich")
 Here you can see the idea. The awesome tool to implement self-healing circle is Kubernetes. To conduct kubernetes kubectl command line tool is indented to be used. Plus there is fabric8 maven plugin to facilitate Java developers to work with kubernetes.
 
-Kubernetes is awesome tool but there is a gap between skills that should be applied to run kubernetes cluster and general Java developer skills. From this point kubernetes could be treated ad a tool to be used by devops experts.
+Kubernetes is awesome tool but there is a gap between skills that should be applied to run kubernetes cluster and general Java developer skills. From this point kubernetes could be treated as a tool to be used by devops experts.
 
 Hopefully, there are tools which greatly simplify deployment of kubernetes cluster under developers machines. One of those tools is minikube. This allows us to quickly run Kubernetes single node cluster.
 Hopefully, by the end of this article reading you will manage to:
