@@ -1,4 +1,5 @@
- 
+
+
 # Kubernetes + docker + Spring boot + Fabric8 maven plugin in a nutshell
 
 ## Overview
@@ -33,6 +34,7 @@ Prerequisite:
 
 ![](docs/img/path.png?raw=true "path")
 ![](docs/img/location.png?raw=true "location")
+
 
 5. Create single node kubernetes cluster. You should execute:
      minikube start --host-only-cidr="192.168.99.1/24"
