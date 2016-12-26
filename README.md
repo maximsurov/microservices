@@ -56,6 +56,7 @@ Prerequisite:
 
  
 
+
 8. Some local settings to be applied:
 Take config file from
 
@@ -98,6 +99,7 @@ If we execute: <<docker images>> on kubernetes + docker host we should see that 
  
  By default service that has one pod is created
  ![](docs/img/single.png?raw=true "single")
+ 
  if e.g. service has been scaled to 3 replicas the output is:
  ![](docs/img/whole.png?raw=true "scaled")
  
@@ -105,7 +107,25 @@ If we execute: <<docker images>> on kubernetes + docker host we should see that 
 
  To execute it externally we should use: http://192.168.99.101:32598/
  Or it could have been configured to use also 8080 port.
+ 
+ ![](docs/img/replica1.png?raw=true "replica")
+ ![](docs/img/replica2.png?raw=true "replica")
+ 
+ As you can see different replicas play periodically.
+
+Other useful commands:
+
+ get pods --kubeconfig="d:/config"
+
+ get nodes --kubeconfig="d:/config"
+
+ get services --kubeconfig="d:/config"
+
+ kubectl cluster-info --kubeconfig="d:/config" 
+You can also leverage different capabilities of fabric8 maven plugin (https://maven.fabric8.io/)
 
  
-
+## Summary
+You have just managed to run single node kubernetes cluster. Plus, you can communicate with it to deploy, scale, etc services by using fabric8 maven plugin.
+From docker perspectives there is counterpart of fabric8 maven plugin. It is called: com.spotify (docker-maven-plugin) though it is also powerfull it is indented to work only with docker, To work with kubernetes you should rely on fabric8 maven plugin.
  
