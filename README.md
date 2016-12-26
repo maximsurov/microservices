@@ -23,7 +23,16 @@ Hopefully, by the end of this article reading you will manage to:
 - scale particular service
 
 
+## Minikube
 
+Prerequisite:
+1.Windows machine with Oracle VM installed + maven
+2.Refer to: https://github.com/kubernetes/minikube
+3.As for me I downloaded binaries: kubectl.exe, minikube.exe
+4.Added them to PATH
+![](docs/img/path.png?raw=true "path")
+
+![](docs/img/location.png?raw=true "location")
 
 
 
