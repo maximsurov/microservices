@@ -1,2 +1,1 @@
-# microservices
-spring boot + fabric8 + docker  + kubernetes examples
+Kubernetes + docker + Spring boot + Fabric8 maven plugin in a nutshell 
