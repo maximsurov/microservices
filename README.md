@@ -22,16 +22,21 @@ Hopefully, by the end of this article reading you will manage to:
 ## Minikube
 
 Prerequisite:
+
 1.Windows machine with Oracle VM installed + maven
+
 2.Refer to: https://github.com/kubernetes/minikube
+
 3.As for me I downloaded binaries: kubectl.exe, minikube.exe
+
 4.Added them to PATH
+
 ![](docs/img/path.png?raw=true "path")
 ![](docs/img/location.png?raw=true "location")
 
 5. Create single node kubernetes cluster. You should execute:
      minikube start --host-only-cidr="192.168.99.1/24"
-1     (--host-only-cidr="192.168.99.1/24") this is for correct minikubeVM configuration: NAT (to provide IP address to be accessed from window machine) + Host-only adapter
+     (--host-only-cidr="192.168.99.1/24") this is for correct minikubeVM configuration: NAT (to provide IP address to be accessed from window machine) + Host-only adapter
 
      After this command has been executed minikubeVM ready to be used is being produced (it is running under CoreOS).  Virtual machine is created automatically.
       ![](docs/img/minikube.png?raw=true "minikube")
