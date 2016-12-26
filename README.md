@@ -13,7 +13,10 @@ Kubernetes is awesome tool but there is a gap between skills that should be appl
 
 Hopefully, there are tools which greatly simplify deployment of kubernetes cluster under developers machines. One of those tools is minikube. This allows us to quickly run Kubernetes single node cluster.
 Hopefully, by the end of this article reading you will manage to:
-- run kubernetes cluster- develop simple Spring boot microservices- deploy microservices into kubernetes by using fabric8 maven plugin ot kubectl tool- scale particular service
+
+- run kubernetes cluster
+- develop simple Spring boot microservices
+- deploy microservices into kubernetes by using fabric8 maven plugin ot kubectl tool- scale particular service
 
 
 ## Minikube
