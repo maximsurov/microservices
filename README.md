@@ -102,12 +102,9 @@ If we execute: <<docker images>> on kubernetes + docker host we should see that 
  mvn fabric8:start -Dfabric8.replicas=3
  
  By default service that has one pod is created
- 
  ![](docs/img/single.png?raw=true "single")
- 
  if e.g. service has been scaled to 3 replicas the output is:
- 
-  ![](docs/img/scaled.png?raw=true "scaled")
+ ![](docs/img/scaled.png?raw=true "scaled")
  
 
  
