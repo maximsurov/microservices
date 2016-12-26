@@ -41,9 +41,7 @@ Prerequisite:
 ![](docs/img/location.png?raw=true "location")
 
 5. Create single node kubernetes cluster. You should execute:
-
      minikube start --host-only-cidr="192.168.99.1/24"
-
 1     (--host-only-cidr="192.168.99.1/24") this is for correct minikubeVM configuration: NAT (to provide IP address to be accessed from window machine) + Host-only adapter
 
      After this command has been executed minikubeVM ready to be used is being produced (it is running under CoreOS).  Virtual machine is created automatically.
@@ -52,9 +50,7 @@ Prerequisite:
 
 6. Execute minikube ip – to discover address of kubernetes machine (or you could login to virtual machine and execute: ifconfig)
 
- 
- ![](docs/img/ip.png?raw=true "minikube ip")
-
+  ![](docs/img/ip.png?raw=true "minikube ip")
 
 7. Kubernetes + docker machine has been just created.
 
@@ -64,8 +60,7 @@ Prerequisite:
 Take config file from
 
  ![](docs/img/settings.png?raw=true "settings")
- 
- And place it somewhere you feel it is convenient. (e.g. I placed it under root of D:/). We should use this file to execute kubectl commands.  
+  And place it somewhere you feel it is convenient. (e.g. I placed it under root of D:/). We should use this file to execute kubectl commands.  
 9.  E.g. refer to example that expands this artical:  https://github.com/maximsurov/microservices
 
 10. Now we can build project and build docker image on host where kubernetes + docker is being run.
@@ -108,7 +103,7 @@ If we execute: <<docker images>> on kubernetes + docker host we should see that 
  
  We have just set up single node 3 replicas (SLA) kubernetes cluster. You can see that all replicas are run.
 
- To execute it externally we should use: http://192.168.99.110:31110/
+ To execute it externally we should use: http://192.168.99.101:32598/
  Or it could have been configured to use also 8080 port.
 
  
