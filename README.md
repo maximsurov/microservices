@@ -18,6 +18,7 @@ Lets
 ## Overview
 
 In this short article I am going to provide you with the information of how you can develop microservices components to run under Kubernetes + docker with the development perspectives. We are going to discuss of how kubernetes + docker + Spring boot + fabric8 maven plugin can work in conjunction with each other.
+
 1Microservices. How could we concisely illustrate architecture of microservices?  Let's refer to Roerich Banner Of Peace picture: https://en.wikipedia.org/wiki/Banner_of_Peace
 ![](docs/img/BannerOfPeace.png?raw=true "Roerich")
 Here you can see the idea. The awesome tool to implement self-healing circle is Kubernetes. To conduct kubernetes kubectl command line tool is indented to be used. Plus there is fabric8 maven plugin to facilitate Java developers to work with kubernetes.
@@ -26,7 +27,6 @@ Kubernetes is awesome tool but there is a gap between skills that should be appl
 
 Hopefully, there are tools which greatly simplify deployment of kubernetes cluster under developers machines. One of those tools is minikube. This allows us to quickly run Kubernetes single node cluster.
 Hopefully, by the end of this article reading you will manage to:
-
 - run kubernetes cluster- develop simple Spring boot microservices- deploy microservices into kubernetes by using fabric8 maven plugin ot kubectl tool- scale particular service
 
 
@@ -38,18 +38,16 @@ Prerequisite:
 3.As for me I downloaded binaries: kubectl.exe, minikube.exe
 4.Added them to PATH
 ![](docs/img/path.png?raw=true "path")
-
 ![](docs/img/location.png?raw=true "location")
 
 5. Create single node kubernetes cluster. You should execute:
 
      minikube start --host-only-cidr="192.168.99.1/24"
 
-     (--host-only-cidr="192.168.99.1/24") this is for correct minikubeVM configuration: NAT (to provide IP address to be accessed from window machine) + Host-only adapter
+1     (--host-only-cidr="192.168.99.1/24") this is for correct minikubeVM configuration: NAT (to provide IP address to be accessed from window machine) + Host-only adapter
 
      After this command has been executed minikubeVM ready to be used is being produced (it is running under CoreOS).  Virtual machine is created automatically.
-     
- ![](docs/img/minikube.png?raw=true "minikube")
+      ![](docs/img/minikube.png?raw=true "minikube")
 
 
 6. Execute minikube ip – to discover address of kubernetes machine (or you could login to virtual machine and execute: ifconfig)
@@ -81,5 +79,35 @@ Take config file from
 
     ![](docs/img/environment.png?raw=true "environment") 
      
+    Then build:
 
+    mvn clean install fabric8:build
 
+It should create executable Spring boot jar + create docker image on remote host.
+If we execute: <<docker images>> on kubernetes + docker host we should see that surov/spring-boot-microservice image has been created.
+
+11. Now it is time to deploy image into kubernetes. From windows host execute consequently 
+
+ kubectl run spring-boot-microservice --image=surov/spring-boot-microservice --port=8080 --replicas=3 --kubeconfig="d:/config"
+ kubectl expose replicationController gs-spring-boot-docker --type=NodePort --external-ip=192.168.99.110 --kubeconfig="d:/config"
+ kubectl describe services gs-spring-boot-docker --kubeconfig="d:/config"
+ kubectl get pods --kubeconfig="d:/config"
+
+ alternative approach is just to use fabric8 maven plugin commands to accomplish it, e.g.:
+ 
+ mvn clean install fabric8:build fabric8:run
+ 
+ to scale:
+ 
+ mvn fabric8:start -Dfabric8.replicas=3
+ 
+ By default service that has one pod is created
+ 
+ ![](docs/img/single.png?raw=true "single")
+ 
+ if e.g. service has been scaled to 3 replicas the output is:
+ 
+  ![](docs/img/scaled.png?raw=true "scaled")
+ 
+
+ 
