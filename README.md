@@ -62,6 +62,7 @@ Take config file from
 
  ![](docs/img/settings.png?raw=true "settings")
   And place it somewhere you feel it is convenient. (e.g. I placed it under root of D:/). We should use this file to execute kubectl commands.  
+
 9.  E.g. refer to example that expands this artical:  https://github.com/maximsurov/microservices
 
 10. Now we can build project and build docker image on host where kubernetes + docker is being run.
@@ -128,4 +129,5 @@ You can also leverage different capabilities of fabric8 maven plugin (https://ma
 ## Summary
 You have just managed to run single node kubernetes cluster. Plus, you can communicate with it to deploy, scale, etc services by using fabric8 maven plugin.
 From docker perspectives there is counterpart of fabric8 maven plugin. It is called: com.spotify (docker-maven-plugin) though it is also powerfull it is indented to work only with docker, To work with kubernetes you should rely on fabric8 maven plugin.
+Thank you for reading. I wanted to share this knowledge and approach. Since I spent a lot of time trying to set up kubernetes (with Ubuntu, etc). It seems it is the most comfortable solution (for general Java developer not for linux guy) just to try locally.
  
