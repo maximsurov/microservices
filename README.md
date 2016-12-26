@@ -1,18 +1,4 @@
-5. Execute minikube ip – to discover address of kubernetes machine (or you could login to virtual machine and execute: ifconfig)
 
- 
-
-
-
-6. Kubernetes + docker machine has been just created.
-
- 
-
-07. Some local hacks to be performed: 
-
-      Take config file from
-
-Lets 
 # Kubernetes + docker + Spring boot + Fabric8 maven plugin in a nutshell
 
 ## Overview
