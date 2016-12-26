@@ -9,7 +9,7 @@ Microservices. How could we concisely illustrate architecture of microservices? 
 ![](docs/img/BannerOfPeace.png?raw=true "Roerich")
 Here you can see the idea. The awesome tool to implement self-healing circle is Kubernetes. To conduct kubernetes kubectl command line tool is indented to be used. Plus there is fabric8 maven plugin to facilitate Java developers to work with kubernetes.
 
-Kubernetes is awesome tool but there is a gap between skills that should be applied to run kubernetes cluster and general Java developer skills. From this point kubernetes could be treated ad a tool to be used by devops experts.
+9Kubernetes is awesome tool but there is a gap between skills that should be applied to run kubernetes cluster and general Java developer skills. From this point kubernetes could be treated ad a tool to be used by devops experts.
 
 Hopefully, there are tools which greatly simplify deployment of kubernetes cluster under developers machines. One of those tools is minikube. This allows us to quickly run Kubernetes single node cluster.
 Hopefully, by the end of this article reading you will manage to:
@@ -24,7 +24,7 @@ Hopefully, by the end of this article reading you will manage to:
 Prerequisite:
 
 1. Windows machine with Oracle VM installed + maven
-
+0
 2. Refer to: https://github.com/kubernetes/minikube
 
 3. As for me I downloaded binaries: kubectl.exe, minikube.exe
@@ -34,7 +34,7 @@ Prerequisite:
 ![](docs/img/path.png?raw=true "path")
 ![](docs/img/location.png?raw=true "location")
 
-5. Create single node kubernetes cluster. You should execute:
+15. Create single node kubernetes cluster. You should execute:
      minikube start --host-only-cidr="192.168.99.1/24"
      (--host-only-cidr="192.168.99.1/24") this is for correct minikubeVM configuration: NAT (to provide IP address to be accessed from window machine) + Host-only adapter
 
@@ -49,16 +49,13 @@ Prerequisite:
 
 7. Kubernetes + docker machine has been just created.
 
- 
-
-
 8. Some local settings to be applied:
 Take config file from
 
  ![](docs/img/settings.png?raw=true "settings")
   And place it somewhere you feel it is convenient. (e.g. I placed it under root of D:/). We should use this file to execute kubectl commands.  
 
-9.  E.g. refer to example that expands this artical:  https://github.com/maximsurov/microservices
+19.  E.g. refer to example that expands this artical:  https://github.com/maximsurov/microservices
 
 10. Now we can build project and build docker image on host where kubernetes + docker is being run.
     At first you have to set:
